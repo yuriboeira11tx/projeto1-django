@@ -1,8 +1,8 @@
 <div class="recipe recipe-list-item">
-    {% if recipe.cover %}
+    {% if recipe.covert %}
         <div class="recipe-cover">
             <a href="{% url 'recipes:recipe' recipe.id %}">
-                <img src="{{ recipe.cover.url }}" alt="Temporário">
+                <img src="{{ recipe.covert.url }}" alt="Temporário">
             </a>
         </div>
     {% endif %}
@@ -15,7 +15,6 @@
     </div>
 
     <div class="recipe-author">
-
         {% if recipe.author is not None %}
             <span class="recipe-author-item">
                 
@@ -44,7 +43,7 @@
 
         {% if recipe.category is not None %}
             <span class="recipe-author-item">
-                <a href="">
+                <a href="{% url 'recipes:category' recipe.category.id %}">
                     <i class="fas fa-layer-group"></i>
                     <span>{{ recipe.category.name }}</span>
                 </a>
